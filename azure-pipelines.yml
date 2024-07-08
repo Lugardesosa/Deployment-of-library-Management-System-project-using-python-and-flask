@@ -23,17 +23,17 @@ stages:
   jobs:
   - job: build
     steps:
-    - task: PythonScript@2
+    - task: CmdLine@2
       displayName: 'Install dependencies'
       inputs:
         command: 'pip install -r requirements.txt'
-    - task: PythonScript@2
+    - task: CmdLine@2
       displayName: 'Set environment variables'
       inputs:
         command: |
           export FLASK_APP=$(flaskApp)
           export FLASK_ENV=$(flaskEnv)
-    - task: PythonScript@2
+    - task: CmdLine@2
       displayName: 'Run Flask app'
       inputs:
         command: 'flask run'
