@@ -1,0 +1,44 @@
+{
+    "family": "aws-library-management-system",
+    "containerDefinitions": [
+      {
+        "name": "aws-library-management-system",
+        "image": "REPOSITORY_URI_PLACEHOLDER",
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 80,
+            "hostPort": 80,
+            "protocol": "tcp"
+          },
+          {
+            "containerPort": 5000,
+            "hostPort": 5000,
+            "protocol": "tcp"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "/ecs/aws-library-management-system",
+            "awslogs-region": "us-east-1",
+            "awslogs-stream-prefix": "ecs"
+          },
+          "secretOptions": null
+        }
+      }
+    ],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+      "operatingSystemFamily": "LINUX",
+      "cpuArchitecture": "X86_64"
+    },
+    "executionRoleArn": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "taskRoleArn": "arn:aws:iam::XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc"
+}
