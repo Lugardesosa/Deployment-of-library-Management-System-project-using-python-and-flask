@@ -8,10 +8,10 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install any required packages specified in requirement.txt
-RUN pip Install--no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 5000 port available to the world outside this container
-EXPOSE 5OOO
+EXPOSE 5000
 
 #Define environment variables 
 ENV FLASK_APP=app.py
