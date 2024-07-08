@@ -12,7 +12,7 @@ pool:
 variables:
   flaskApp: 'app.py'
   flaskEnv: 'development'
-  dockerRegistryServiceConnection: 'dockerRegistryServiceConnection'
+  dockerRegistryServiceConnection: 'AzureRMSubscription'
   containerRegistry: 'containerRegistry'
   dockerRepository: 'librarymanagement'
   tag: '$(Build.BuildId)'
@@ -42,6 +42,4 @@ stages:
       inputs:
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        containerRegistry: $(containerRegistry)
-        repository: $(dockerRepository)
-        tags: $(tag)
+        
